@@ -41,18 +41,16 @@
         $category_id = $_POST['category_id'];
         $location_id = $_POST['location_id'];
         $address = $_POST['address'];
-        $features =  $_POST['features'];
+        $room_count =  $_POST['room_count'];
 
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $mobile = (int) $_POST['mobile'];
+        
 
         $images =  $_FILES['images'];   // asosiative array
 
         $owner_id = $_SESSION['owner']['owner_id'];
 
-        $insert_q_data = "INSERT INTO houses(house_id,category_id,location_id,address,title,description,features,price,name,mobile,email,owner_ID)
-                     VALUES ('$house_id','$category_id','$location_id','$address','$title','$description','$features','$price','$name','$mobile','$email','$owner_id')";
+        $insert_q_data = "INSERT INTO houses(house_id,category_id,location_id,address,title,description,room_count,price,owner_ID)
+                     VALUES ('$house_id','$category_id','$location_id','$address','$title','$description','$room_count','$price','$owner_id')";
 
         echo "<pre>";
         print_r($_FILES);
@@ -159,8 +157,8 @@
         <lable>description</lable>
         <textarea name="description" placeholder="description" required></textarea> <br><br>
 
-        <lable>features</lable>
-        <input type="text" name="features" placeholder="features" required> <br><br>
+        <lable>Room Count</lable>
+        <input type="number" name="room_count" placeholder="features" required> <br><br>
 
         <lable>price</lable>
         <input type="number" name="price" placeholder="price" required> <br><br>
@@ -169,10 +167,7 @@
         <input type="file" id="images" name="images[]" accept="image/*" multiple required>
         <small>(Minimum 1 image, Maximum 5 images)</small><br><br>
 
-        <label>contact info</label><br><br>
-        <input type="text" name="name" placeholder="name" required> &nbsp; &nbsp;
-        <input type="number" name="mobile" placeholder="mobile" required> <br><br>
-        <input type="email" name="email" placeholder="email"required><br><br>
+        
 
         <button type="submit" name="post_add">Add Post</button>
     </form>

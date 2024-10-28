@@ -28,7 +28,7 @@
 <body>
 
     <?php 
-        include_once "../components/owner_nav.php";
+        include_once "../components/owner_nav.php";  // import6 navigtion bar
     ?>
 
     <h2>Subscription Types</h2>
