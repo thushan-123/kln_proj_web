@@ -1,4 +1,5 @@
 
+    
     <header class="site-header">
         <div class="container">
             <!-- Site Logo -->
@@ -18,8 +19,20 @@
 
             <!-- Get Started Button -->
             <div class="get-started">
-                <a href="login.php" class="get-started-btn">Get Started</a>
-                <a href="postadd.php" class="get-started-btn">Post Add</a>
+                <?php  if (isset($_SESSION['seeker'])) : ?>
+                    <a href="profile.php" class="get-started-btn">My Account</a>
+                <?php else: ?>
+
+                    <a href="login.php" class="get-started-btn">Get Started</a>
+                <?php  endif; 
+                    if (isset($_SESSION['owner'])) :
+
+                ?>
+                    <a href="owner/profile.php" class="get-started-btn">My Account</a>
+                    <a href="owner/adverticer.php" class="get-started-btn">Post Add</a>
+
+                <?php  endif; ?>
+
             </div>
         </div>
     </header>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'dbconnect.php'; // Include your database connection file
 
 // Set default values for pagination

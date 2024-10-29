@@ -38,7 +38,7 @@
         // If no errors, check for email and password in the database
         if (!array_filter($errors)) {
             // Check if the user exists in the database
-            $sql = "SELECT * FROM owner WHERE email = ?";
+            $sql = "SELECT * FROM seeker WHERE email = ?";
             $stmt = mysqli_prepare($connect, $sql);
             mysqli_stmt_bind_param($stmt, "s", $email);
             mysqli_stmt_execute($stmt);
@@ -59,7 +59,7 @@
     
                     // Redirect to a protected page (dashboard.php)
                     
-                    header("Location: ./logedindex.php");
+                    header("Location: ./index.php");
                     
                     
                     exit();

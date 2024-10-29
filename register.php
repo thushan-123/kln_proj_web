@@ -113,11 +113,10 @@
                 
 
                 if($user_type == 'seeker'){
-                    $seeker_id = uniqid();
 
-                    $sql = "INSERT INTO seeker (seeker_ID,email, password, contact_no, first_name, last_name) VALUES (?,?, ?, ?, ?, ?)";
+                    $sql = "INSERT INTO seeker (email, password, contact_no, first_name, last_name) VALUES (?, ?, ?, ?, ?)";
                     $stmt = mysqli_prepare($connect, $sql);
-                    mysqli_stmt_bind_param($stmt, "ssssss",$seeker_id, $email, $hashed_password, $contact, $firstname, $lastname);
+                    mysqli_stmt_bind_param($stmt, "sssss", $email, $hashed_password, $contact, $firstname, $lastname);
                 }else{
 
                     

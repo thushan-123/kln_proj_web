@@ -4,7 +4,7 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    include_once "../../dbconnect.php";
+    include_once "../dbconnect.php";
 
 
     // get the subscripton 
@@ -28,7 +28,7 @@
 <body>
 
     <?php 
-        include_once "../components/owner_nav.php";  // import6 navigtion bar
+        include_once "./owner_nav.php";  // import navigtion bar
     ?>
 
     <h2>Subscription Types</h2>

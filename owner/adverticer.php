@@ -7,13 +7,13 @@
     include_once "../dbconnect.php";
 
     if(!isset($_SESSION['owner'])) {
-        header("Location: ./index.php");
+        header("Location: ./login.php");
     }
-    
+    /*
     echo "<pre>";
     print_r($_SESSION);
     echo "</pre>";
-    
+    */
    $owner_id =  $_SESSION['owner']['owner_id'];
 
     $query = "SELECT * FROM  owner_plan WHERE owner_ID = '$owner_id' LIMIT 1";
@@ -109,6 +109,7 @@
 </head>
 <body>
 
+    <?php  include_once "./owner_nav.php"; ?>
     <span color="red">
         <?php
 
