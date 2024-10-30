@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 include_once "./dbconnect.php";
 include_once "./Function/function.php";
 
-if (isset($_GET['house_ID']) && !empty($_GET['house_ID'])) {  // Fixing variable name here
+if (isset($_GET['house_ID']) && !empty($_GET['house_ID'])) {  
     $house_ID = user_input($_GET['house_ID']);
 
     $query = "SELECT * FROM houses WHERE house_id = '$house_ID' AND is_approved=true ";
