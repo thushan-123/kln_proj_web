@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `admin` (
-  `admin_ID` int(10) NOT NULL,
+  `admin_ID` int(10) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `admin` (
   PRIMARY KEY (`admin_ID`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `password` (`password`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +41,8 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES
+(1,'thush','madhu','thush@gmail.com','$2y$10$x.kS/Eon3e/M4uAW00HU1.0CBJl3NFy83Z2WJ64RuOgrApWEB.VJG');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,9 +174,9 @@ CREATE TABLE `houses` (
 LOCK TABLES `houses` WRITE;
 /*!40000 ALTER TABLE `houses` DISABLE KEYS */;
 INSERT INTO `houses` VALUES
-('671df7f242032',1,1,'sbsbsg','sdfsd','sdfbsdfb',3245,0,4,NULL,0),
-('671e0d04e624a',1,1,'sdfb','sdfbds','fsdbdbf',423,0,4,NULL,0),
-('671fb432bf930',1,1,'sadfgasd','asgsdg','asdgasdf',235235,0,4,NULL,30);
+('671df7f242032',1,1,'sbsbsg','sdfsd','sdfbsdfb',3245,1,4,NULL,0),
+('671e0d04e624a',1,1,'sdfb','sdfbds','fsdbdbf',423,1,4,'2024-10-29',0),
+('671fb432bf930',1,2,'sadfgasd','asgsdg','asdgasdf',235235,0,4,NULL,30);
 /*!40000 ALTER TABLE `houses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -344,16 +346,14 @@ DROP TABLE IF EXISTS `seeker`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `seeker` (
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `contact_no` varchar(15) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `last_name` varchar(50) NOT NULL,
-  `seeker_ID` varchar(255) NOT NULL,
-  UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `password` (`password`),
-  UNIQUE KEY `contact` (`contact_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `seeker_ID` int(5) NOT NULL AUTO_INCREMENT,
+  `email` varchar(60) DEFAULT NULL,
+  `first_name` varchar(20) DEFAULT NULL,
+  `last_name` varchar(20) DEFAULT NULL,
+  `password` varchar(200) DEFAULT NULL,
+  `contact_no` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`seeker_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -363,8 +363,7 @@ CREATE TABLE `seeker` (
 LOCK TABLES `seeker` WRITE;
 /*!40000 ALTER TABLE `seeker` DISABLE KEYS */;
 INSERT INTO `seeker` VALUES
-('thus@gmail.com','$2y$10$ZptIo9CvBPB4iK63WFPxY..z.cEarBbkBZ4zPr6R2tbSDh9EmOrxS','785021665','dsfgasd','asdgsdg',''),
-('Thushanmadusanka456@gmail.com','$2y$10$nzbnUx/yU3LN9onxSiUSnenWIFP6R59vYNu.sk3Mqj3N8Q5u3T.A6','0785914774','Thushan','madhu','');
+(1,'thush@gmail.com','thushan','madhu','$2y$10$eXwBVvX3e.fVYGOi/v86i.nY5TEFiGp7NHz9bOiUQvAM8Vg2EV.D.','0789414773');
 /*!40000 ALTER TABLE `seeker` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -431,4 +430,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2024-10-28 21:29:28
+-- Dump completed on 2024-10-30  6:48:41
