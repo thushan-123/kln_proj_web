@@ -174,7 +174,7 @@ CREATE TABLE `houses` (
 LOCK TABLES `houses` WRITE;
 /*!40000 ALTER TABLE `houses` DISABLE KEYS */;
 INSERT INTO `houses` VALUES
-('671df7f242032',1,1,'sbsbsg','sdfsd','sdfbsdfb',3245,1,4,NULL,0),
+('671df7f242032',1,1,'sbsbsg','sdfsd','sdfbsdfb',3245,1,4,'2024-10-30',0),
 ('671e0d04e624a',1,1,'sdfb','sdfbds','fsdbdbf',423,1,4,'2024-10-29',0),
 ('671fb432bf930',1,2,'sadfgasd','asgsdg','asdgasdf',235235,0,4,NULL,30);
 /*!40000 ALTER TABLE `houses` ENABLE KEYS */;
@@ -306,7 +306,7 @@ CREATE TABLE `owner_plan` (
 LOCK TABLES `owner_plan` WRITE;
 /*!40000 ALTER TABLE `owner_plan` DISABLE KEYS */;
 INSERT INTO `owner_plan` VALUES
-(4,1,'2024-12-10');
+(4,2,'2025-05-01');
 /*!40000 ALTER TABLE `owner_plan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -375,7 +375,7 @@ DROP TABLE IF EXISTS `subscription_payment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `subscription_payment` (
-  `payment_ID` int(10) NOT NULL,
+  `payment_ID` varchar(255) NOT NULL,
   `date` date NOT NULL,
   `owner_ID` int(10) NOT NULL,
   PRIMARY KEY (`payment_ID`),
@@ -390,6 +390,10 @@ CREATE TABLE `subscription_payment` (
 
 LOCK TABLES `subscription_payment` WRITE;
 /*!40000 ALTER TABLE `subscription_payment` DISABLE KEYS */;
+INSERT INTO `subscription_payment` VALUES
+('672323ce62814','2024-10-31',4),
+('6723244bac2a3','2024-10-31',4),
+('67232477654ce','2024-10-31',4);
 /*!40000 ALTER TABLE `subscription_payment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -430,4 +434,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2024-10-30  6:48:41
+-- Dump completed on 2024-10-31 12:03:02

@@ -8,7 +8,7 @@
     include_once "../Function/function.php";
 
     if(!isset($_SESSION['owner'])) {
-        header("Location: ./index.php");
+        header("Location: ./login.php");
     }
 
     echo "<pre>";
